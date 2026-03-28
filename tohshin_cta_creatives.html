@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トーシンパートナーズ｜CTAクリエイティブ 全22種</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #0d2040;
+  --navy2:     #1a3464;
+  --navy-light:#253f6e;
+  --gold:      #b8960c;
+  --gold2:     #d4aa14;
+  --gold-pale: #f7f0dc;
+  --white:     #ffffff;
+  --offwhite:  #f8f6f1;
+  --text:      #1a1a1a;
+  --text-sub:  #5a5a5a;
+  --border:    #ddd8cc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #f0ede6;
+  color: var(--text);
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  padding: 32px 40px;
+  text-align: center;
+}
+.page-header h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.page-header p { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; }
+
+/* ===== SECTION ===== */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+}
+.section:last-child { padding-bottom: 80px; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.section-heading-bar {
+  width: 4px;
+  height: 22px;
+  background: var(--gold);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-heading-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+}
+.section-heading-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.08em;
+}
+.tag-tofu    { background: #e3edff; color: #1a3a8a; }
+.tag-mofu    { background: #fff3e0; color: #8a4a00; }
+.tag-bofu    { background: #fde8e0; color: #8a1a00; }
+
+/* ===== GRID ===== */
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* ===== CTA LABEL ===== */
+.cta-meta-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cta-meta-label::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ==============================================
+   CTA TYPE 1: 診断系（適性・リスク・投資タイプ）
+   ============================================== */
+.cta-shindan {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-shindan-top {
+  background: var(--navy);
+  padding: 22px 24px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-shindan-top::after {
+  content: '';
+  position: absolute;
+  right: -20px; top: -20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(184,150,12,0.12);
+}
+.cta-shindan-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold2);
+  margin-bottom: 8px;
+}
+.cta-shindan-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.65;
+  white-space: pre-line;
+}
+.cta-shindan-body {
+  padding: 16px 24px 20px;
+}
+.cta-shindan-copy {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.cta-shindan-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.pill {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 3px 10px;
+  color: var(--text-sub);
+}
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--navy2); }
+.btn-primary::after { content: '›'; font-size: 18px; }
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+}
+.btn-gold:hover { background: var(--gold2); }
+.btn-outline {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+.btn-outline:hover { background: var(--offwhite); }
+
+/* ==============================================
+   CTA TYPE 2: ダウンロード系（初心者ガイド）
+   ============================================== */
+.cta-dl {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+  display: flex;
+  flex-direction: column;
+}
+.cta-dl-visual {
+  background: linear-gradient(135deg, #0d2040 0%, #1a3464 100%);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.cta-dl-book {
+  width: 60px;
+  min-width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  background: var(--gold-pale);
+  border: 2px solid rgba(184,150,12,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.cta-dl-book-icon { font-size: 22px; }
+.cta-dl-book-label { font-size: 8px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; }
+.cta-dl-text {}
+.cta-dl-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+  letter-spacing: 0.08em;
+}
+.cta-dl-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.cta-dl-body { padding: 14px 22px 18px; flex: 1; display: flex; flex-direction: column; }
+.cta-dl-copy {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.cta-dl-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--offwhite);
+  border-radius: 3px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  color: var(--text-sub);
+}
+.cta-dl-info-icon { font-size: 16px; }
+
+/* ==============================================
+   CTA TYPE 3: シミュレーション系（節税・利回り）
+   ============================================== */
+.cta-sim {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-sim-top {
+  background: var(--offwhite);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cta-sim-icon-wrap {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.cta-sim-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.cta-sim-body { padding: 14px 22px 18px; }
+.cta-sim-copy {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.cta-sim-demo {
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.cta-sim-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.cta-sim-row:last-child { margin-bottom: 0; }
+.cta-sim-label { font-size: 11px; color: var(--text-sub); width: 90px; flex-shrink: 0; }
+.cta-sim-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--text);
+}
+.cta-sim-result {
+  background: var(--navy);
+  border-radius: 3px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.cta-sim-result-label { font-size: 11px; color: rgba(255,255,255,0.65); }
+.cta-sim-result-val { font-size: 20px; font-weight: 700; color: var(--gold2); }
+.cta-sim-result-unit { font-size: 11px; color: rgba(255,255,255,0.65); }
+
+/* ==============================================
+   CTA TYPE 4: 資料請求
+   ============================================== */
+.cta-doc {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-doc-header {
+  background: var(--navy);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cta-doc-header-icon { font-size: 24px; }
+.cta-doc-header-text {}
+.cta-doc-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--gold2); margin-bottom: 3px; }
+.cta-doc-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.cta-doc-body { padding: 14px 22px 18px; }
+.cta-doc-copy { font-size: 12px; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; }
+.cta-doc-checklist { margin-bottom: 14px; display: flex; flex-direction: column; gap: 5px; }
+.cta-doc-check {
+  display: flex; align-items: flex-start; gap: 7px;
+  font-size: 12px; color: var(--text-sub); line-height: 1.5;
+}
+.cta-doc-check::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.cta-doc-form { display: flex; gap: 8px; margin-bottom: 10px; }
+.cta-doc-form input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 9px 10px;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+/* ==============================================
+   CTA TYPE 5: 個別相談
+   ============================================== */
+.cta-consult {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-consult-top {
+  background: linear-gradient(120deg, #0d2040 0%, #1a3464 100%);
+  padding: 22px 22px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-consult-top::before {
+  content: '35年';
+  position: absolute;
+  right: 16px; bottom: -8px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: rgba(184,150,12,0.12);
+  letter-spacing: -2px;
+}
+.cta-consult-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold2); margin-bottom: 8px; }
+.cta-consult-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.65;
+  white-space: pre-line;
+}
+.cta-consult-body { padding: 14px 22px 18px; }
+.cta-consult-copy { font-size: 12px; color: var(--text-sub); line-height: 1.85; margin-bottom: 14px; }
+.cta-consult-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.consult-tag {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  border-radius: 99px;
+  padding: 3px 10px;
+}
+.cta-consult-trust {
+  display: flex;
+  gap: 12px;
+  background: var(--offwhite);
+  border-radius: 3px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+.trust-item { text-align: center; flex: 1; }
+.trust-num { font-size: 18px; font-weight: 700; color: var(--navy); font-family: 'Noto Serif JP', serif; }
+.trust-label { font-size: 9px; color: var(--text-sub); margin-top: 2px; }
+
+/* ==============================================
+   CTA TYPE 6: ウェビナー
+   ============================================== */
+.cta-webinar {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-webinar-top {
+  background: var(--navy);
+  padding: 20px 22px;
+  position: relative;
+}
+.cta-webinar-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(184,150,12,0.2);
+  border: 1px solid var(--gold);
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold2); }
+.cta-webinar-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.cta-webinar-body { padding: 14px 22px 18px; }
+.cta-webinar-copy { font-size: 12px; color: var(--text-sub); line-height: 1.85; margin-bottom: 12px; }
+.cta-webinar-info {
+  background: var(--offwhite);
+  border-radius: 3px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.webinar-info-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-sub); }
+.webinar-info-icon { font-size: 14px; width: 20px; text-align: center; flex-shrink: 0; }
+.cta-webinar-seats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-bottom: 14px;
+}
+.seat-track { flex: 1; height: 4px; background: #ddd; border-radius: 99px; overflow: hidden; }
+.seat-fill { height: 100%; border-radius: 99px; background: var(--gold); }
+
+/* ==============================================
+   CTA TYPE 7: LINE
+   ============================================== */
+.cta-line {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-line-header {
+  background: #06c755;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cta-line-header-icon { font-size: 20px; }
+.cta-line-header-name { font-size: 14px; font-weight: 700; color: var(--white); }
+.cta-line-header-verified { font-size: 10px; color: rgba(255,255,255,0.75); }
+.cta-line-body { padding: 14px 22px 18px; }
+.cta-line-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.6;
+  white-space: pre-line;
+  margin-bottom: 10px;
+}
+.cta-line-copy { font-size: 12px; color: var(--text-sub); line-height: 1.85; margin-bottom: 12px; }
+.cta-line-benefits { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+.line-benefit { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-sub); }
+.line-benefit::before { content: '✓'; color: #06c755; font-weight: 700; flex-shrink: 0; }
+.btn-line {
+  width: 100%;
+  background: #06c755;
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ==============================================
+   CTA TYPE 8: Q&A
+   ============================================== */
+.cta-qa {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13,32,64,0.07);
+}
+.cta-qa-header {
+  background: var(--offwhite);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cta-qa-header-icon { font-size: 22px; }
+.cta-qa-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.cta-qa-body { padding: 14px 22px 18px; }
+.cta-qa-copy { font-size: 12px; color: var(--text-sub); line-height: 1.85; margin-bottom: 12px; }
+.cta-qa-list { margin-bottom: 14px; display: flex; flex-direction: column; gap: 7px; }
+.qa-item {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.qa-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f4f6fb;
+}
+.qa-q-badge {
+  min-width: 20px; height: 20px;
+  border-radius: 3px;
+  background: var(--navy);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.qa-q-text { font-size: 12px; color: var(--navy); font-weight: 500; line-height: 1.5; }
+.qa-a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+.qa-a-badge {
+  min-width: 20px; height: 20px;
+  border-radius: 3px;
+  background: var(--gold);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.qa-a-text { font-size: 11.5px; color: var(--text-sub); line-height: 1.65; }
+
+/* FOOTER NOTE */
+.footer-note {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 11px;
+  color: #aaa;
+  border-top: 1px solid #ddd;
+  margin-top: 48px;
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>トーシンパートナーズ｜CTAクリエイティブ 全22種</h1>
+  <p>検索意図（懐疑系 / 情報収集系 / 比較検討系 / 実務系）別バリエーション</p>
+</div>
+
+<!-- ============ ToFu ============ -->
+<div class="section">
+  <div class="section-heading">
+    <div class="section-heading-bar"></div>
+    <div class="section-heading-text">ToFu（Cold）― 懐疑系・情報収集系</div>
+    <div class="section-heading-tag tag-tofu">ToFu</div>
+  </div>
+  <div class="cta-grid">
+
+    <!-- 1. 適性診断 × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">適性診断 × 懐疑系</div>
+      <div class="cta-shindan">
+        <div class="cta-shindan-top">
+          <div class="cta-shindan-eyebrow">FREE DIAGNOSIS</div>
+          <div class="cta-shindan-catch">不動産投資、自分には向いてる？
+2分でわかる適性診断</div>
+        </div>
+        <div class="cta-shindan-body">
+          <div class="cta-shindan-copy">「やめとけ」と言われたあなたへ。向いているかどうか、まず確かめてみませんか。</div>
+          <div class="cta-shindan-pills">
+            <div class="pill">📋 7問</div>
+            <div class="pill">⏱ 約2分</div>
+            <div class="pill">登録不要</div>
+          </div>
+          <button class="btn-primary">無料で適性診断をはじめる</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. リスク耐性診断 × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">リスク耐性診断 × 懐疑系</div>
+      <div class="cta-shindan">
+        <div class="cta-shindan-top">
+          <div class="cta-shindan-eyebrow">RISK CHECK</div>
+          <div class="cta-shindan-catch">リスクが怖い人ほど、
+先に「自分の耐性」を知っておくべき</div>
+        </div>
+        <div class="cta-shindan-body">
+          <div class="cta-shindan-copy">怖いのは「リスクそのもの」ではなく「知らないこと」。あなたのリスク許容度を診断します。</div>
+          <div class="cta-shindan-pills">
+            <div class="pill">🟢 低リスク型</div>
+            <div class="pill">🟡 バランス型</div>
+            <div class="pill">🔴 積極型</div>
+          </div>
+          <button class="btn-primary">リスク耐性を無料で診断する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 投資タイプ診断 × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">投資タイプ診断 × 懐疑系</div>
+      <div class="cta-shindan">
+        <div class="cta-shindan-top">
+          <div class="cta-shindan-eyebrow">TYPE DIAGNOSIS</div>
+          <div class="cta-shindan-catch">「自分に合う投資」がわかれば
+不安は8割減る</div>
+        </div>
+        <div class="cta-shindan-body">
+          <div class="cta-shindan-copy">なんとなく怖いのは、自分のタイプを知らないから。7問で投資スタイルを判定します。</div>
+          <div class="cta-shindan-pills">
+            <div class="pill">🛡 堅実型</div>
+            <div class="pill">📈 成長型</div>
+            <div class="pill">🏦 節税型</div>
+            <div class="pill">⚖️ バランス型</div>
+          </div>
+          <button class="btn-primary">投資タイプを無料で診断する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 投資タイプ診断 × 情報収集系 -->
+    <div>
+      <div class="cta-meta-label">投資タイプ診断 × 情報収集系</div>
+      <div class="cta-shindan">
+        <div class="cta-shindan-top">
+          <div class="cta-shindan-eyebrow">TYPE DIAGNOSIS</div>
+          <div class="cta-shindan-catch">情報収集中のあなたへ。
+まず「自分のタイプ」を確認しましょう</div>
+        </div>
+        <div class="cta-shindan-body">
+          <div class="cta-shindan-copy">どの投資手法が合うかは、あなたの目的・スタイル次第。診断で絞り込めます。</div>
+          <div class="cta-shindan-pills">
+            <div class="pill">📋 7問</div>
+            <div class="pill">5タイプ判定</div>
+            <div class="pill">無料</div>
+          </div>
+          <button class="btn-primary">投資タイプを無料で診断する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 初心者ガイドDL × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">初心者ガイドDL × 懐疑系</div>
+      <div class="cta-dl">
+        <div class="cta-dl-visual">
+          <div class="cta-dl-book">
+            <div class="cta-dl-book-icon">📗</div>
+            <div class="cta-dl-book-label">FREE</div>
+          </div>
+          <div class="cta-dl-text">
+            <div class="cta-dl-badge">無料ガイド</div>
+            <div class="cta-dl-catch">「怪しい」と思ったまま
+調べるのが、一番の近道</div>
+          </div>
+        </div>
+        <div class="cta-dl-body">
+          <div class="cta-dl-copy">不安な人ほど読んでほしい。不動産投資の仕組みとリスクを、忖度なく解説した無料ガイドです。</div>
+          <div class="cta-dl-info">
+            <div class="cta-dl-info-icon">📥</div>
+            PDF全48ページ｜無料ダウンロード
+          </div>
+          <button class="btn-primary">無料ガイドをダウンロードする</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 初心者ガイドDL × 情報収集系 -->
+    <div>
+      <div class="cta-meta-label">初心者ガイドDL × 情報収集系</div>
+      <div class="cta-dl">
+        <div class="cta-dl-visual">
+          <div class="cta-dl-book">
+            <div class="cta-dl-book-icon">📗</div>
+            <div class="cta-dl-book-label">FREE</div>
+          </div>
+          <div class="cta-dl-text">
+            <div class="cta-dl-badge">無料ガイド</div>
+            <div class="cta-dl-catch">基礎知識、全部まとめました。
+無料ガイドをダウンロード</div>
+          </div>
+        </div>
+        <div class="cta-dl-body">
+          <div class="cta-dl-copy">始め方・リスク・税金・物件選びまで。初心者が最初に読むべき1冊を無料でお届けします。</div>
+          <div class="cta-dl-info">
+            <div class="cta-dl-info-icon">📥</div>
+            PDF全48ページ｜無料ダウンロード
+          </div>
+          <button class="btn-primary">無料ガイドをダウンロードする</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 節税シミュレーション × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">節税シミュレーション × 懐疑系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">🧾</div>
+          <div class="cta-sim-catch">節税できると言われたけど、本当？
+まず自分で試算してみて</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">営業トークを信じる前に、数字で確認。あなたの年収で実際いくら節税できるか、今すぐ試算。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">年収（税込）</div>
+              <input class="cta-sim-input" value="800万円" readonly />
+            </div>
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">購入物件価格</div>
+              <input class="cta-sim-input" value="2,500万円" readonly />
+            </div>
+          </div>
+          <div class="cta-sim-result">
+            <div>
+              <div class="cta-sim-result-label">年間節税効果（概算）</div>
+              <div class="cta-sim-result-val">約32<span class="cta-sim-result-unit">万円</span></div>
+            </div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.45);">試算例</div>
+          </div>
+          <button class="btn-primary">自分の節税額を無料で試算する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. 節税シミュレーション × 情報収集系 -->
+    <div>
+      <div class="cta-meta-label">節税シミュレーション × 情報収集系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">🧾</div>
+          <div class="cta-sim-catch">年収○○万円なら、
+年間いくら節税できる？</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">仕組みを理解するより、まず数字を見たほうが早い。無料シミュレーションで概算を確認。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">あなたの年収</div>
+              <input class="cta-sim-input" placeholder="例：800万円" />
+            </div>
+          </div>
+          <button class="btn-primary">節税シミュレーションを試す</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. 利回り試算 × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">利回り試算 × 懐疑系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">📉</div>
+          <div class="cta-sim-catch">「本当に儲かるの？」
+まず数字で確認してください</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">感覚ではなく、数字で判断しましょう。あなたの条件で利回りをシミュレーションできます。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">物件価格</div>
+              <input class="cta-sim-input" value="2,500万円" readonly />
+            </div>
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">想定家賃</div>
+              <input class="cta-sim-input" value="月 8.5万円" readonly />
+            </div>
+          </div>
+          <div class="cta-sim-result">
+            <div>
+              <div class="cta-sim-result-label">実質利回り（概算）</div>
+              <div class="cta-sim-result-val">3.8<span class="cta-sim-result-unit">%</span></div>
+            </div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.45);">試算例</div>
+          </div>
+          <button class="btn-primary">利回りを無料で試算する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. 利回り試算 × 情報収集系 -->
+    <div>
+      <div class="cta-meta-label">利回り試算 × 情報収集系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">📉</div>
+          <div class="cta-sim-catch">利回りの「表面」と「実質」、
+違いを知っていますか？</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">表面利回りだけ見ると失敗します。管理費・空室率を考慮した実質利回りを今すぐ試算。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">表面利回り</div>
+              <input class="cta-sim-input" value="4.8%" readonly />
+            </div>
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">実質利回り</div>
+              <input class="cta-sim-input" value="3.2%（経費込み）" readonly />
+            </div>
+          </div>
+          <button class="btn-primary">実質利回りを無料で試算する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. 資料請求 × 懐疑系 -->
+    <div>
+      <div class="cta-meta-label">資料請求 × 懐疑系</div>
+      <div class="cta-doc">
+        <div class="cta-doc-header">
+          <div class="cta-doc-header-icon">📋</div>
+          <div class="cta-doc-header-text">
+            <div class="cta-doc-eyebrow">FREE DOCUMENT</div>
+            <div class="cta-doc-catch">まだ迷っているなら、
+まず資料だけ見てみてください</div>
+          </div>
+        </div>
+        <div class="cta-doc-body">
+          <div class="cta-doc-copy">営業は一切しません。物件・実績・仕組みをまとめた資料を、無料でお送りします。</div>
+          <div class="cta-doc-checklist">
+            <div class="cta-doc-check">物件ラインナップ・エリア一覧</div>
+            <div class="cta-doc-check">実績・入居率データ</div>
+            <div class="cta-doc-check">収支シミュレーション事例</div>
+          </div>
+          <div class="cta-doc-form">
+            <input type="email" placeholder="メールアドレス" />
+          </div>
+          <button class="btn-primary">無料で資料を受け取る</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Q&A閲覧 × 情報収集系 -->
+    <div>
+      <div class="cta-meta-label">Q&A閲覧 × 情報収集系</div>
+      <div class="cta-qa">
+        <div class="cta-qa-header">
+          <div class="cta-qa-header-icon">❓</div>
+          <div class="cta-qa-catch">よくある疑問、
+ここで全部解決しましょう</div>
+        </div>
+        <div class="cta-qa-body">
+          <div class="cta-qa-copy">「空室になったら？」「副業にあたる？」投資前に気になる質問をQ&A形式でまとめています。</div>
+          <div class="cta-qa-list">
+            <div class="qa-item">
+              <div class="qa-q">
+                <div class="qa-q-badge">Q</div>
+                <div class="qa-q-text">空室になったらローン返済はどうなりますか？</div>
+              </div>
+              <div class="qa-a">
+                <div class="qa-a-badge">A</div>
+                <div class="qa-a-text">サブリース契約を活用することで、空室時も家賃収入を確保できます。</div>
+              </div>
+            </div>
+            <div class="qa-item">
+              <div class="qa-q">
+                <div class="qa-q-badge">Q</div>
+                <div class="qa-q-text">副業禁止の会社でも始められますか？</div>
+              </div>
+              <div class="qa-a">
+                <div class="qa-a-badge">A</div>
+                <div class="qa-a-text">不動産投資は「資産運用」のため、多くの場合副業規定の対象外です。</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-outline">Q&Aをすべて見る</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ MoFu ============ -->
+<div class="section">
+  <div class="section-heading">
+    <div class="section-heading-bar"></div>
+    <div class="section-heading-text">MoFu（Warm）― 比較検討系</div>
+    <div class="section-heading-tag tag-mofu">MoFu</div>
+  </div>
+  <div class="cta-grid">
+
+    <!-- 13. 投資タイプ診断 × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">投資タイプ診断 × 比較検討系</div>
+      <div class="cta-shindan">
+        <div class="cta-shindan-top">
+          <div class="cta-shindan-eyebrow">TYPE DIAGNOSIS</div>
+          <div class="cta-shindan-catch">比較する前に、
+「自分が何を重視するか」を整理しよう</div>
+        </div>
+        <div class="cta-shindan-body">
+          <div class="cta-shindan-copy">節税・安定・成長・保険代わり。優先順位を明確にすると、比較がぐっと楽になります。</div>
+          <div class="cta-shindan-pills">
+            <div class="pill">🏦 節税優先</div>
+            <div class="pill">🛡 安定優先</div>
+            <div class="pill">📈 成長優先</div>
+          </div>
+          <button class="btn-primary">投資タイプを診断して比較する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. 初心者ガイドDL × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">初心者ガイドDL × 比較検討系</div>
+      <div class="cta-dl">
+        <div class="cta-dl-visual">
+          <div class="cta-dl-book">
+            <div class="cta-dl-book-icon">📗</div>
+            <div class="cta-dl-book-label">FREE</div>
+          </div>
+          <div class="cta-dl-text">
+            <div class="cta-dl-badge">比較検討に使えるガイド</div>
+            <div class="cta-dl-catch">比較検討に必要な「基準」が
+この1冊に</div>
+          </div>
+        </div>
+        <div class="cta-dl-body">
+          <div class="cta-dl-copy">投資会社を比較する前に、まず判断基準を持ちましょう。無料ガイドで正しい見方を身につけて。</div>
+          <div class="cta-dl-info">
+            <div class="cta-dl-info-icon">📥</div>
+            PDF全48ページ｜無料ダウンロード
+          </div>
+          <button class="btn-primary">無料ガイドをダウンロードする</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. 節税シミュレーション × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">節税シミュレーション × 比較検討系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">🧾</div>
+          <div class="cta-sim-catch">節税効果まで含めると、
+実質利回りはこう変わる</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">表面利回りだけで比較していませんか？節税分を加味した実質コストを試算してみてください。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">節税前 実質利回り</div>
+              <input class="cta-sim-input" value="3.2%" readonly />
+            </div>
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">節税後 実質利回り</div>
+              <input class="cta-sim-input" value="4.7%（試算例）" readonly />
+            </div>
+          </div>
+          <button class="btn-primary">節税込みの利回りを試算する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. 利回り試算 × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">利回り試算 × 比較検討系</div>
+      <div class="cta-sim">
+        <div class="cta-sim-top">
+          <div class="cta-sim-icon-wrap">📉</div>
+          <div class="cta-sim-catch">物件を比べるなら、
+同じ基準で試算しましょう</div>
+        </div>
+        <div class="cta-sim-body">
+          <div class="cta-sim-copy">物件AとBの条件が違えば単純比較はできません。統一基準で利回りを算出してみて。</div>
+          <div class="cta-sim-demo">
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">物件A 実質利回り</div>
+              <input class="cta-sim-input" value="3.8%" readonly />
+            </div>
+            <div class="cta-sim-row">
+              <div class="cta-sim-label">物件B 実質利回り</div>
+              <input class="cta-sim-input" value="4.1%" readonly />
+            </div>
+          </div>
+          <button class="btn-primary">物件を同条件で比較試算する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. 資料請求 × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">資料請求 × 比較検討系</div>
+      <div class="cta-doc">
+        <div class="cta-doc-header">
+          <div class="cta-doc-header-icon">📋</div>
+          <div class="cta-doc-header-text">
+            <div class="cta-doc-eyebrow">FREE DOCUMENT</div>
+            <div class="cta-doc-catch">比較に使える資料、
+無料でお送りします</div>
+          </div>
+        </div>
+        <div class="cta-doc-body">
+          <div class="cta-doc-copy">物件スペック・実績・サポート体制を一覧化。他社と比べるための材料としてお使いください。</div>
+          <div class="cta-doc-checklist">
+            <div class="cta-doc-check">物件スペック・立地一覧</div>
+            <div class="cta-doc-check">35年の実績・入居率データ</div>
+            <div class="cta-doc-check">他社との比較ポイント整理</div>
+          </div>
+          <div class="cta-doc-form">
+            <input type="email" placeholder="メールアドレス" />
+          </div>
+          <button class="btn-primary">無料で資料を受け取る</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18. 個別相談 × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">個別相談 × 比較検討系</div>
+      <div class="cta-consult">
+        <div class="cta-consult-top">
+          <div class="cta-consult-eyebrow">FREE CONSULTATION</div>
+          <div class="cta-consult-catch">迷っているなら、
+プロに1時間聞いてみてください</div>
+        </div>
+        <div class="cta-consult-body">
+          <div class="cta-consult-copy">「A社とB社どっちがいい？」「この物件は適正価格？」何でも聞けます。無料・非営業。</div>
+          <div class="cta-consult-tags">
+            <div class="consult-tag">✓ 無料</div>
+            <div class="consult-tag">✓ 強引な勧誘なし</div>
+            <div class="consult-tag">✓ オンライン対応</div>
+          </div>
+          <div class="cta-consult-trust">
+            <div class="trust-item">
+              <div class="trust-num">35年</div>
+              <div class="trust-label">の実績</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">99%</div>
+              <div class="trust-label">入居率</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">8,000+</div>
+              <div class="trust-label">オーナー様</div>
+            </div>
+          </div>
+          <button class="btn-primary">無料個別相談を予約する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19. ウェビナー × 比較検討系 -->
+    <div>
+      <div class="cta-meta-label">ウェビナー申込 × 比較検討系</div>
+      <div class="cta-webinar">
+        <div class="cta-webinar-top">
+          <div class="cta-webinar-live"><div class="live-dot"></div>LIVE SEMINAR</div>
+          <div class="cta-webinar-catch">成功事例と失敗事例、
+両方を聞いて判断しましょう</div>
+        </div>
+        <div class="cta-webinar-body">
+          <div class="cta-webinar-copy">良いことだけ話す会社を信用しないでください。リスクも含めてすべてお伝えするウェビナーです。</div>
+          <div class="cta-webinar-info">
+            <div class="webinar-info-row"><div class="webinar-info-icon">📅</div>毎週火・木曜日 19:00〜20:30</div>
+            <div class="webinar-info-row"><div class="webinar-info-icon">💻</div>オンライン（Zoom）</div>
+            <div class="webinar-info-row"><div class="webinar-info-icon">🎁</div>参加無料・事前登録制</div>
+          </div>
+          <div class="cta-webinar-seats">
+            <span>残席</span>
+            <div class="seat-track"><div class="seat-fill" style="width:75%"></div></div>
+            <span>残り<strong>6</strong>席</span>
+          </div>
+          <button class="btn-primary">無料ウェビナーに申し込む</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ BoFu ============ -->
+<div class="section">
+  <div class="section-heading">
+    <div class="section-heading-bar"></div>
+    <div class="section-heading-text">BoFu（Hot）― 実務系</div>
+    <div class="section-heading-tag tag-bofu">BoFu</div>
+  </div>
+  <div class="cta-grid">
+
+    <!-- 20. 資料請求 × 実務系 -->
+    <div>
+      <div class="cta-meta-label">資料請求 × 実務系</div>
+      <div class="cta-doc">
+        <div class="cta-doc-header">
+          <div class="cta-doc-header-icon">📋</div>
+          <div class="cta-doc-header-text">
+            <div class="cta-doc-eyebrow">FREE DOCUMENT</div>
+            <div class="cta-doc-catch">具体的に動き出すなら、
+詳細資料をご確認ください</div>
+          </div>
+        </div>
+        <div class="cta-doc-body">
+          <div class="cta-doc-copy">物件詳細・収支シミュレーション・契約フローをまとめた資料をお届けします。</div>
+          <div class="cta-doc-checklist">
+            <div class="cta-doc-check">最新物件詳細・価格一覧</div>
+            <div class="cta-doc-check">あなたの年収に合わせた収支シミュレーション</div>
+            <div class="cta-doc-check">購入から運用開始までのフロー</div>
+          </div>
+          <div class="cta-doc-form">
+            <input type="email" placeholder="メールアドレス" />
+          </div>
+          <button class="btn-gold btn-primary">今すぐ無料で資料を受け取る</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 21. 個別相談 × 実務系 -->
+    <div>
+      <div class="cta-meta-label">個別相談 × 実務系</div>
+      <div class="cta-consult">
+        <div class="cta-consult-top">
+          <div class="cta-consult-eyebrow">FREE CONSULTATION</div>
+          <div class="cta-consult-catch">購入を具体的に検討中の方へ。
+個別プランを一緒に設計します</div>
+        </div>
+        <div class="cta-consult-body">
+          <div class="cta-consult-copy">年収・資産・目標をもとに、あなた専用の収支プランを無料で作成します。</div>
+          <div class="cta-consult-tags">
+            <div class="consult-tag">✓ 収支プラン作成無料</div>
+            <div class="consult-tag">✓ 対面・オンライン選択可</div>
+          </div>
+          <div class="cta-consult-trust">
+            <div class="trust-item">
+              <div class="trust-num">35年</div>
+              <div class="trust-label">の実績</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">99%</div>
+              <div class="trust-label">入居率</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">8,000+</div>
+              <div class="trust-label">オーナー様</div>
+            </div>
+          </div>
+          <button class="btn-gold btn-primary">無料個別相談を予約する</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22. LINE登録 × 実務系 -->
+    <div>
+      <div class="cta-meta-label">LINE登録 × 実務系</div>
+      <div class="cta-line">
+        <div class="cta-line-header">
+          <div class="cta-line-header-icon">💬</div>
+          <div>
+            <div class="cta-line-header-name">トーシンパートナーズ 公式LINE</div>
+            <div class="cta-line-header-verified">認証済みアカウント</div>
+          </div>
+        </div>
+        <div class="cta-line-body">
+          <div class="cta-line-catch">物件情報・マーケット速報を
+LINEで受け取る</div>
+          <div class="cta-line-copy">新着物件・金利動向・税制改正など、投資判断に役立つ情報をタイムリーにお届けします。</div>
+          <div class="cta-line-benefits">
+            <div class="line-benefit">新着物件情報をいち早くお届け</div>
+            <div class="line-benefit">金利・税制の最新動向をご案内</div>
+            <div class="line-benefit">個別相談の予約もLINEから可能</div>
+          </div>
+          <button class="btn-line">💬 LINEで友だち追加する</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer-note">
+  トーシンパートナーズ CTAクリエイティブ 全22種｜社内確認用ドキュメント
+</div>
+
+</body>
+</html>
