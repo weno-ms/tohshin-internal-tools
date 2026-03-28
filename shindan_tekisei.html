@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不動産投資 適性診断｜トーシンパートナーズ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f2044;
+  --navy2: #1a3464;
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+  --gold-pale: #f5edd8;
+  --white: #ffffff;
+  --bg: #f7f5f0;
+  --text: #1a1a1a;
+  --text-sub: #6b6b6b;
+  --border: #e0d8cc;
+  --radius: 16px;
+  --shadow: 0 8px 40px rgba(15,32,68,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: var(--navy);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px;
+  color: var(--white);
+  letter-spacing: 0.08em;
+}
+.logo span { color: var(--gold-light); }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #2a4a8e 100%);
+  padding: 64px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(184,134,11,0.08);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -40px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(212,160,23,0.6);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 5px 16px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(24px, 5vw, 36px);
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold-light);
+}
+.hero-sub {
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.6);
+  font-size: 12px;
+}
+.hero-meta-item strong { color: var(--gold-light); font-size: 14px; }
+
+/* ===== MAIN ===== */
+.main {
+  max-width: 680px;
+  margin: -32px auto 0;
+  padding: 0 16px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== START CARD ===== */
+.start-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  text-align: center;
+}
+.start-icon { font-size: 48px; margin-bottom: 16px; }
+.start-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.start-desc {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.start-checklist {
+  background: var(--gold-pale);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.start-checklist li {
+  font-size: 13px;
+  color: var(--navy);
+  padding: 4px 0;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.start-checklist li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ===== QUIZ CARD ===== */
+.quiz-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: none;
+}
+.quiz-card.active { display: block; }
+
+.progress-bar-wrap {
+  height: 5px;
+  background: #e8e4dc;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--gold), var(--gold-light));
+  transition: width 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.quiz-top {
+  padding: 28px 32px 0;
+}
+.quiz-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.quiz-step-num {
+  font-size: 12px;
+  color: var(--text-sub);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.quiz-step-dots {
+  display: flex;
+  gap: 5px;
+}
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #e0d8cc;
+  transition: background 0.3s;
+}
+.dot.done { background: var(--gold); }
+.dot.current { background: var(--navy); transform: scale(1.2); }
+
+.quiz-q {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+.quiz-q-sub {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-bottom: 24px;
+}
+
+.quiz-options {
+  padding: 0 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quiz-opt {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  text-align: left;
+  font-family: inherit;
+  font-weight: 500;
+}
+.quiz-opt:hover {
+  border-color: var(--gold);
+  background: var(--gold-pale);
+  color: var(--navy);
+}
+.quiz-opt.selected {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+.opt-icon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.quiz-nav {
+  padding: 0 32px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--text-sub);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-back:hover { color: var(--navy); }
+.btn-next {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-next.enabled {
+  opacity: 1;
+  pointer-events: auto;
+}
+.btn-next.enabled:hover { transform: translateY(-1px); }
+
+/* ===== RESULT ===== */
+.result-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: none;
+}
+.result-card.active { display: block; }
+
+.result-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  padding: 36px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.result-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(184,134,11,0.15);
+}
+.result-badge {
+  display: inline-block;
+  border: 1px solid rgba(212,160,23,0.5);
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+.result-type-icon { font-size: 52px; margin-bottom: 8px; }
+.result-type-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.result-type-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.04em;
+}
+
+.result-body { padding: 28px 32px; }
+
+.result-score-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.score-item {
+  background: var(--gold-pale);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.score-label { font-size: 11px; color: var(--text-sub); margin-bottom: 4px; }
+.score-bar-wrap {
+  height: 6px;
+  background: #e0d0b0;
+  border-radius: 99px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+.score-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--gold);
+  transition: width 1s ease;
+}
+.score-val { font-size: 13px; font-weight: 700; color: var(--navy); }
+
+.result-desc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.result-desc {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.result-points {
+  background: #f4f2ee;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+.result-points-title { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.result-point-item {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  padding: 4px 0;
+  display: flex;
+  gap: 8px;
+}
+.result-point-item::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+/* ===== CTA AREA ===== */
+.cta-area {
+  border-top: 1px solid var(--border);
+  padding: 24px 32px 32px;
+  background: #faf8f5;
+}
+.cta-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cta-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15,32,68,0.25);
+}
+.cta-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.cta-btn-secondary:hover { background: var(--gold-pale); }
+
+.retry-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-sub);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.retry-link:hover { color: var(--navy); }
+
+/* ===== BTN PRIMARY (start) ===== */
+.btn-start {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15,32,68,0.3);
+}
+
+/* ===== ANIM ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.quiz-card.active, .result-card.active, .start-card {
+  animation: fadeUp 0.4s ease;
+}
+
+@media (max-width: 480px) {
+  .quiz-top, .quiz-options, .quiz-nav, .result-body, .cta-area { padding-left: 20px; padding-right: 20px; }
+  .result-score-wrap { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 48px 16px 64px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">TOHSHIN <span>PARTNERS</span></div>
+  <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.06em;">不動産投資 適性診断</div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">FREE DIAGNOSIS</div>
+  <h1>あなたは不動産投資に<br><em>向いている？</em></h1>
+  <p class="hero-sub">7つの質問に答えるだけで、あなたの投資適性と<br>最適な始め方がわかります。所要時間：約2分</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">📋 <strong>7問</strong> の質問</div>
+    <div class="hero-meta-item">⏱ <strong>約2分</strong> で完了</div>
+    <div class="hero-meta-item">🔒 <strong>無料</strong> ・登録不要</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- START -->
+  <div class="start-card" id="startCard">
+    <div class="start-icon">🏠</div>
+    <div class="start-title">診断でわかること</div>
+    <div class="start-desc">あなたの収入・資産状況・ライフスタイルから、<br>不動産投資との「相性」を4タイプで判定します。</div>
+    <ul class="start-checklist">
+      <li>不動産投資に向いているかどうかの適性スコア</li>
+      <li>あなたのタイプに合った投資スタイルの提案</li>
+      <li>今すぐ取るべき具体的なアクション</li>
+      <li>トーシンの専門家によるサポート内容</li>
+    </ul>
+    <button class="btn-start" onclick="startQuiz()">診断をはじめる →</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-card" id="quizCard">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progressBar" style="width:0%"></div>
+    </div>
+    <div class="quiz-top">
+      <div class="quiz-step">
+        <div class="quiz-step-num" id="stepNum">質問 1 / 7</div>
+        <div class="quiz-step-dots" id="stepDots"></div>
+      </div>
+      <div class="quiz-q" id="quizQ"></div>
+      <div class="quiz-q-sub" id="quizSub"></div>
+    </div>
+    <div class="quiz-options" id="quizOptions"></div>
+    <div class="quiz-nav">
+      <button class="btn-back" id="btnBack" onclick="prevQ()">← 前へ</button>
+      <button class="btn-next" id="btnNext" onclick="nextQ()">次の質問へ <span>→</span></button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-card" id="resultCard">
+    <div class="result-header">
+      <div class="result-badge">DIAGNOSIS RESULT</div>
+      <div class="result-type-icon" id="resultIcon"></div>
+      <div class="result-type-name" id="resultName"></div>
+      <div class="result-type-sub" id="resultSub"></div>
+    </div>
+    <div class="result-body">
+      <div class="result-score-wrap" id="resultScores"></div>
+      <div class="result-desc-title">あなたの診断結果</div>
+      <div class="result-desc" id="resultDesc"></div>
+      <div class="result-points">
+        <div class="result-points-title">🎯 あなたへの推奨アクション</div>
+        <div id="resultPoints"></div>
+      </div>
+    </div>
+    <div class="cta-area">
+      <div class="cta-title">次のステップへ進みましょう</div>
+      <div class="cta-buttons">
+        <button class="cta-btn-primary" onclick="window.open('#','_blank')">
+          🤝 無料個別相談を予約する
+        </button>
+        <button class="cta-btn-secondary" onclick="window.open('#','_blank')">
+          📋 詳しい資料を無料で受け取る
+        </button>
+      </div>
+      <div class="retry-link" onclick="retryQuiz()">もう一度診断する</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===== 設問データ =====
+const questions = [
+  {
+    q: "現在のご職業を教えてください",
+    sub: "あなたの収入基盤を確認します",
+    options: [
+      { icon: "🏢", text: "会社員・公務員（正社員）", score: { stability: 3, income: 2 } },
+      { icon: "💼", text: "会社員（契約・派遣）", score: { stability: 1, income: 1 } },
+      { icon: "🚀", text: "経営者・役員・自営業", score: { stability: 2, income: 3 } },
+      { icon: "🎓", text: "その他（学生・主婦など）", score: { stability: 0, income: 0 } },
+    ]
+  },
+  {
+    q: "年収はおおよそどのくらいですか？",
+    sub: "ローン審査の基準となる重要な指標です",
+    options: [
+      { icon: "💴", text: "400万円未満", score: { income: 0, loan: 0 } },
+      { icon: "💴", text: "400万〜600万円", score: { income: 1, loan: 1 } },
+      { icon: "💴", text: "600万〜1,000万円", score: { income: 2, loan: 2 } },
+      { icon: "💴", text: "1,000万円以上", score: { income: 3, loan: 3 } },
+    ]
+  },
+  {
+    q: "現在の貯蓄・金融資産はどのくらいですか？",
+    sub: "頭金・諸費用の目安になります",
+    options: [
+      { icon: "🪙", text: "100万円未満", score: { asset: 0 } },
+      { icon: "💰", text: "100万〜300万円", score: { asset: 1 } },
+      { icon: "💰", text: "300万〜500万円", score: { asset: 2 } },
+      { icon: "💰", text: "500万円以上", score: { asset: 3 } },
+    ]
+  },
+  {
+    q: "投資に関するご経験はありますか？",
+    sub: "経験がなくても問題ありません",
+    options: [
+      { icon: "🔰", text: "まったくない（初心者）", score: { exp: 0 } },
+      { icon: "📊", text: "株・投資信託などの経験あり", score: { exp: 1 } },
+      { icon: "🏠", text: "不動産以外の投資経験あり", score: { exp: 2 } },
+      { icon: "🏗️", text: "不動産投資の経験あり", score: { exp: 3 } },
+    ]
+  },
+  {
+    q: "老後の資金について、どのくらい不安を感じていますか？",
+    sub: "投資モチベーションの把握に使います",
+    options: [
+      { icon: "😌", text: "あまり不安はない", score: { motivation: 0 } },
+      { icon: "🤔", text: "少し不安がある", score: { motivation: 1 } },
+      { icon: "😟", text: "かなり不安に感じている", score: { motivation: 2 } },
+      { icon: "😰", text: "強い危機感を持っている", score: { motivation: 3 } },
+    ]
+  },
+  {
+    q: "投資に回せる月額の余剰資金はどのくらいですか？",
+    sub: "ローン返済や運用費の参考にします",
+    options: [
+      { icon: "📉", text: "ほぼない（月1万円未満）", score: { cashflow: 0 } },
+      { icon: "📊", text: "月1万〜3万円程度", score: { cashflow: 1 } },
+      { icon: "📈", text: "月3万〜5万円程度", score: { cashflow: 2 } },
+      { icon: "🚀", text: "月5万円以上", score: { cashflow: 3 } },
+    ]
+  },
+  {
+    q: "不動産投資に期待することは何ですか？（最も近いもの）",
+    sub: "あなたのゴールに合わせた提案をします",
+    options: [
+      { icon: "🛡️", text: "老後の年金・生活費の補填", score: { goal: "pension" } },
+      { icon: "🏦", text: "節税・税金対策", score: { goal: "tax" } },
+      { icon: "📈", text: "資産を増やして将来に備えたい", score: { goal: "asset" } },
+      { icon: "🌏", text: "生命保険代わり・相続対策", score: { goal: "insurance" } },
+    ]
+  }
+];
+
+// ===== スコア集計・タイプ判定 =====
+// 判定軸：stability + income + loan + asset + cashflow = 財務スコア（0〜14）
+// exp = 経験スコア（0〜3）
+// motivation = 動機スコア（0〜3）
+
+const resultTypes = [
+  {
+    id: "readyNow",
+    icon: "🏆",
+    name: "今すぐ始められる 即戦力タイプ",
+    sub: "適性スコア：非常に高い",
+    desc: "収入・資産・キャッシュフローのすべてが整っており、不動産投資を始める条件が揃っています。ローン審査も通りやすく、物件選びと会社選びを慎重に行えば高い確率で成功できます。今が動き出すベストタイミングです。",
+    scores: [
+      { label: "財務適性", val: 90 },
+      { label: "ローン通過率", val: 85 },
+      { label: "投資準備度", val: 95 },
+      { label: "リスク耐性", val: 80 },
+    ],
+    points: [
+      "まず無料個別相談で、あなたに合う物件を確認する",
+      "年収・資産をもとにシミュレーションを試算する",
+      "トーシンの実績・物件ラインナップを資料で確認する",
+    ]
+  },
+  {
+    id: "prepareNext",
+    icon: "📈",
+    name: "準備を整えれば有望な 成長タイプ",
+    sub: "適性スコア：高い",
+    desc: "収入・職業の安定性は十分あります。あと一歩、貯蓄や月々のキャッシュフローを整えることで、不動産投資への扉が大きく開きます。今から準備を始めることで1〜2年後に理想のスタートを切れます。",
+    scores: [
+      { label: "財務適性", val: 70 },
+      { label: "ローン通過率", val: 65 },
+      { label: "投資準備度", val: 60 },
+      { label: "リスク耐性", val: 75 },
+    ],
+    points: [
+      "初心者ガイドで不動産投資の基礎知識を身につける",
+      "毎月の貯蓄目標を設定し、頭金の準備を進める",
+      "ウェビナーで成功事例・失敗事例を学ぶ",
+    ]
+  },
+  {
+    id: "studyFirst",
+    icon: "📚",
+    name: "まずは知識から 慎重スタートタイプ",
+    sub: "適性スコア：中程度",
+    desc: "投資への意欲は感じられますが、財務面や経験値の面でもう少し準備が必要な状況です。焦らず、正しい知識を身につけることが成功への最短ルートです。トーシンの無料コンテンツを活用してください。",
+    scores: [
+      { label: "財務適性", val: 45 },
+      { label: "ローン通過率", val: 40 },
+      { label: "投資準備度", val: 35 },
+      { label: "リスク耐性", val: 60 },
+    ],
+    points: [
+      "初心者向けの無料ガイドをダウンロードして基礎を学ぶ",
+      "まずは少額投資（NISA・投信）で投資感覚をつかむ",
+      "年収アップ・節約で財務基盤を強化する",
+    ]
+  },
+  {
+    id: "notYet",
+    icon: "🌱",
+    name: "今は見送りが賢明 将来への種まきタイプ",
+    sub: "適性スコア：要準備",
+    desc: "現時点では不動産投資を始めるには財務的なハードルがあります。ただし、今の状況は変えられます。まずは家計の見直しと収入増加を優先し、2〜3年後を見据えた計画を立てましょう。",
+    scores: [
+      { label: "財務適性", val: 20 },
+      { label: "ローン通過率", val: 15 },
+      { label: "投資準備度", val: 20 },
+      { label: "リスク耐性", val: 50 },
+    ],
+    points: [
+      "家計の収支を見直し、月3万円の貯蓄習慣をつける",
+      "副業・スキルアップで収入基盤を強化する",
+      "LINEで情報収集を続け、タイミングを逃さない準備を",
+    ]
+  }
+];
+
+// ===== STATE =====
+let current = 0;
+let answers = new Array(questions.length).fill(null);
+let scores = {};
+
+function startQuiz() {
+  document.getElementById('startCard').style.display = 'none';
+  const qc = document.getElementById('quizCard');
+  qc.classList.add('active');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[current];
+  const total = questions.length;
+
+  document.getElementById('stepNum').textContent = `質問 ${current + 1} / ${total}`;
+  document.getElementById('progressBar').style.width = `${((current) / total) * 100}%`;
+
+  // dots
+  let dots = '';
+  for (let i = 0; i < total; i++) {
+    let cls = i < current ? 'done' : i === current ? 'current' : '';
+    dots += `<div class="dot ${cls}"></div>`;
+  }
+  document.getElementById('stepDots').innerHTML = dots;
+
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizSub').textContent = q.sub;
+
+  let optHtml = '';
+  q.options.forEach((opt, i) => {
+    const sel = answers[current] === i ? 'selected' : '';
+    optHtml += `<button class="quiz-opt ${sel}" onclick="selectOpt(${i})">`
+      + `<span class="opt-icon">${opt.icon}</span>${opt.text}</button>`;
+  });
+  document.getElementById('quizOptions').innerHTML = optHtml;
+
+  const btnNext = document.getElementById('btnNext');
+  if (answers[current] !== null) {
+    btnNext.classList.add('enabled');
+    btnNext.textContent = current === total - 1 ? '結果を見る ✓' : '次の質問へ →';
+  } else {
+    btnNext.classList.remove('enabled');
+    btnNext.textContent = current === total - 1 ? '結果を見る ✓' : '次の質問へ →';
+  }
+
+  document.getElementById('btnBack').style.visibility = current === 0 ? 'hidden' : 'visible';
+}
+
+function selectOpt(idx) {
+  answers[current] = idx;
+  document.querySelectorAll('.quiz-opt').forEach((el, i) => {
+    el.classList.toggle('selected', i === idx);
+  });
+  document.getElementById('btnNext').classList.add('enabled');
+  const total = questions.length;
+  document.getElementById('btnNext').textContent = current === total - 1 ? '結果を見る ✓' : '次の質問へ →';
+}
+
+function nextQ() {
+  if (answers[current] === null) return;
+  if (current < questions.length - 1) {
+    current++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function prevQ() {
+  if (current > 0) { current--; renderQuestion(); }
+}
+
+// ===== スコア集計 =====
+function calcScores() {
+  let financial = 0;
+  let exp = 0;
+  let motivation = 0;
+  let goal = null;
+
+  answers.forEach((ans, qi) => {
+    if (ans === null) return;
+    const sc = questions[qi].options[ans].score;
+    if (sc.stability !== undefined) financial += sc.stability;
+    if (sc.income !== undefined) financial += sc.income;
+    if (sc.loan !== undefined) financial += sc.loan;
+    if (sc.asset !== undefined) financial += sc.asset;
+    if (sc.cashflow !== undefined) financial += sc.cashflow;
+    if (sc.exp !== undefined) exp = sc.exp;
+    if (sc.motivation !== undefined) motivation = sc.motivation;
+    if (sc.goal !== undefined) goal = sc.goal;
+  });
+  return { financial, exp, motivation, goal };
+}
+
+// ===== タイプ判定ロジック =====
+// financial: 0〜14点
+// 12以上 → readyNow
+//  8〜11 → prepareNext
+//  4〜7  → studyFirst
+//  3以下 → notYet
+function judgeType(sc) {
+  if (sc.financial >= 12) return resultTypes[0];
+  if (sc.financial >= 8)  return resultTypes[1];
+  if (sc.financial >= 4)  return resultTypes[2];
+  return resultTypes[3];
+}
+
+function showResult() {
+  document.getElementById('quizCard').classList.remove('active');
+  document.getElementById('progressBar').style.width = '100%';
+
+  const sc = calcScores();
+  const type = judgeType(sc);
+
+  document.getElementById('resultIcon').textContent = type.icon;
+  document.getElementById('resultName').textContent = type.name;
+  document.getElementById('resultSub').textContent = type.sub;
+  document.getElementById('resultDesc').textContent = type.desc;
+
+  let scHtml = type.scores.map(s => `
+    <div class="score-item">
+      <div class="score-label">${s.label}</div>
+      <div class="score-bar-wrap"><div class="score-bar" style="width:0%" data-val="${s.val}"></div></div>
+      <div class="score-val">${s.val}%</div>
+    </div>`).join('');
+  document.getElementById('resultScores').innerHTML = scHtml;
+
+  let ptHtml = type.points.map(p =>
+    `<div class="result-point-item">${p}</div>`).join('');
+  document.getElementById('resultPoints').innerHTML = ptHtml;
+
+  const rc = document.getElementById('resultCard');
+  rc.classList.add('active');
+  rc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // バーアニメ
+  setTimeout(() => {
+    document.querySelectorAll('.score-bar').forEach(el => {
+      el.style.width = el.dataset.val + '%';
+    });
+  }, 300);
+}
+
+function retryQuiz() {
+  current = 0;
+  answers = new Array(questions.length).fill(null);
+  document.getElementById('resultCard').classList.remove('active');
+  document.getElementById('quizCard').classList.add('active');
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
